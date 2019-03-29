@@ -130,7 +130,36 @@
     list-style: none;
     margin-top: 3.5rem;
 
-    &__item {}
+    &__item {
+      position: relative;
+      z-index: 2;
+
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    &__item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 3px;
+      background-color: var(--color-primary);
+      transform: scaleY(0);
+      transition: transform 0.2s, width .4s cubic-bezier(0.86, 0, 0.07, 1) 0.2s, backgroud-color .1s;
+    }
+
+    &__item:hover::before,
+    &__item--active::before {
+      transform: scaleY(1);
+      width: 100%;
+    }
+
+    &__item:active::before {
+      background-color: var(--color-primary-light);
+    }
 
     &__link:link,
     &__link:visited {
@@ -139,6 +168,8 @@
       text-transform: uppercase;
       display: block;
       padding: 1.5rem 3rem;
+      position: relative;
+      z-index: 2;
 
       display: flex;
       align-items: center;
