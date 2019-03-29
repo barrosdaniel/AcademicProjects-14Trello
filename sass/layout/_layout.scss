@@ -3,9 +3,6 @@
   margin: 8rem auto;
   background-color: var(--color-gray-light-2);
   box-shadow: var(--shadow-dark);
-
-  // Temp
-  min-height: 50rem;
 }
 
 .header {
@@ -25,10 +22,16 @@
 
 .sidebar {
   background-color: var(--color-gray-dark-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex: 0 0 18%;
 }
 
 .hotel-view {
   background-color: var(--color-white);
   flex: 1;
+
+  // Temp
+  min-height: 50rem;
 }

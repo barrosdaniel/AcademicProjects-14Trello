@@ -40,8 +40,7 @@ body {
   max-width: 120rem;
   margin: 8rem auto;
   background-color: var(--color-gray-light-2);
-  box-shadow: var(--shadow-dark);
-  min-height: 50rem; }
+  box-shadow: var(--shadow-dark); }
 
 .header {
   font-size: 1.4rem;
@@ -57,11 +56,15 @@ body {
 
 .sidebar {
   background-color: var(--color-gray-dark-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex: 0 0 18%; }
 
 .hotel-view {
   background-color: var(--color-white);
-  flex: 1; }
+  flex: 1;
+  min-height: 50rem; }
 
 .logo {
   height: 3.25rem;
@@ -140,3 +143,27 @@ body {
     height: 3.75rem;
     border-radius: 50%;
     margin-right: 1rem; }
+
+.sidebar .side-nav {
+  font-size: 1.4rem;
+  list-style: none;
+  margin-top: 3.5rem; }
+  .sidebar .side-nav__link:link, .sidebar .side-nav__link:visited {
+    color: var(--color-gray-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center; }
+  .sidebar .side-nav__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 2rem;
+    fill: currentColor; }
+
+.sidebar .legal {
+  font-size: 1.1rem;
+  color: var(--color-gray-light-4);
+  text-align: center;
+  padding: 2.5rem; }
