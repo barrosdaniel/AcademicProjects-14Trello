@@ -130,12 +130,25 @@
     list-style: none;
     margin-top: 3.5rem;
 
+    @media only screen and (max-width: $bp-medium) {
+      display: flex;
+      margin: 0;
+    }
+
     &__item {
       position: relative;
       z-index: 2;
 
       &:not(:last-child) {
         margin-bottom: 0.5rem;
+
+        @media only screen and (max-width: $bp-medium) {
+          margin: 0;
+        }
+      }
+
+      @media only screen and (max-width: $bp-medium) {
+        flex: 1;
       }
     }
 
@@ -173,6 +186,11 @@
 
       display: flex;
       align-items: center;
+
+      @media only screen and (max-width: $bp-medium) {
+        justify-content: center;
+        padding: 2rem;
+      }
     }
 
     &__icon {
@@ -190,6 +208,10 @@
     color: var(--color-gray-light-4);
     text-align: center;
     padding: 2.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      display: none;
+    }
   }
 
 }
@@ -324,6 +346,10 @@
   background-color: var(--color-gray-light-1);
   border-bottom: var(--line);
   font-size: 1.4rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3rem;
+  }
 }
 
 
@@ -333,6 +359,11 @@
   padding: 3rem;
   flex: 0 0 60%;
   margin-right: 4.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
 }
 
 .user-reviews {
@@ -402,6 +433,10 @@
 
   &__friends {
     margin-left: auto;
+
+    @media only screen and (max-width: $bp-medium) {
+      display: flex;
+    }
   }
 
   &__photo {
@@ -411,8 +446,9 @@
     border-radius: 50%;
     border: 3px solid var(--color-white);
 
+
     &:not(:last-child) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
     }
   }
 }
@@ -427,6 +463,11 @@
   padding: 3rem;
   position: relative;
   overflow: hidden;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
 
   &:not(:last-child) {
     margin-bottom: 3.5rem;
@@ -483,4 +524,73 @@
     z-index: 1;
   }
 
+}
+
+
+
+////////////////////////////////////
+// Call to Action
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2.5rem 0;
+    margin-bottom: 3rem;
+  }
+
+  &__book-now {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 100px;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  &>* {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+  }
+
+  &__visible {
+    padding: 2rem 7.5rem;
+  }
+
+  &__invisible {
+    position: absolute;
+    padding: 2rem 0;
+    left: 0;
+    top: -100%;
+  }
+
+  &:hover {
+    background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__invisible {
+    top: 0;
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
 }
